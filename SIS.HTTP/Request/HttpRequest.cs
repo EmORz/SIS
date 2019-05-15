@@ -97,7 +97,7 @@ namespace SIS.HTTP.Request
             plainHeaders
                 .Select(plainHeader => plainHeader.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries))
                 .ToList()
-                .ForEach(queryParameterKeyValuePair => this.QueryData.Add(queryParameterKeyValuePair[0], queryParameterKeyValuePair[1])));
+                .ForEach(queryParameterKeyValuePair => this.QueryData.Add(queryParameterKeyValuePair[0], queryParameterKeyValuePair[1]));
         }
 
         private void ParseRequestQueryParameters()
