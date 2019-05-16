@@ -2,7 +2,7 @@
 {
     public class ConnectionHandler
     {
-        public ConnectionHandler()
+        public ConnectionHandler(System.Net.Sockets.Socket client)
         {
             //todo: implement
         }

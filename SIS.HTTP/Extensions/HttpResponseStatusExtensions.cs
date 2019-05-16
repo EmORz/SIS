@@ -20,8 +20,8 @@ namespace SIS.HTTP.Extensions
                     return "303 Bad Request";
                 case HttpResponseStatusCode.Unauthorized:
                     return "401 Unauthorized";
-                case HttpResponseStatusCode.Forrbide:
-                    return "403 Forrbidden";
+                case HttpResponseStatusCode.Forbidden:
+                    return "403 Forbidden";
                 case HttpResponseStatusCode.NotFound:
                     return "404 Not Found";
                 case HttpResponseStatusCode.InternalServerError:

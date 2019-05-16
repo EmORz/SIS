@@ -6,12 +6,7 @@ namespace SIS.HTTP.Headers.Contarct
     {
 
         void AddHeader(HttpHeader header);
-
         bool ContainsHeader(string key);
-
         HttpHeader GetHeader(string key);
-
-
-
     }
 }

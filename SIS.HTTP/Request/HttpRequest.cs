@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIS.HTTP.Common;
+﻿using SIS.HTTP.Common;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Headers.Contarct;
 using SIS.HTTP.Request.Contracts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SIS.HTTP.Request
 {
@@ -15,13 +14,12 @@ namespace SIS.HTTP.Request
     {
         public HttpRequest(string requestString)
         {
-           CoreValidator.ThrowIfNullOrEmpty(requestString, nameof(requestString));
+            CoreValidator.ThrowIfNullOrEmpty(requestString, nameof(requestString));
 
+            this.FormData = new Dictionary<string, object>();
+            this.QueryData = new Dictionary<string, object>();
+            this.Headers = new HttpHeaderCollection();
 
-           this.FormData = new Dictionary<string, object>();
-           this.QueryData = new Dictionary<string, object>();
-           this.Headers = new HttpHeaderCollection();
-           
         }
         public string Path { get; private set; }
 
@@ -60,7 +58,7 @@ namespace SIS.HTTP.Request
 
         private IEnumerable<string> ParsePlainRequestHeaders(string[] requestLines)
         {
-            for (int i = 1; i < requestLines.Length-1; i++)
+            for (int i = 1; i < requestLines.Length - 1; i++)
             {
                 if (!string.IsNullOrEmpty(requestLines[i]))
                 {
@@ -97,7 +95,7 @@ namespace SIS.HTTP.Request
             plainHeaders
                 .Select(plainHeader => plainHeader.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries))
                 .ToList()
-                .ForEach(queryParameterKeyValuePair => this.QueryData.Add(queryParameterKeyValuePair[0], queryParameterKeyValuePair[1]));
+                .ForEach(queryParameterKeyValuePair => this.Headers.AddHeader(new HttpHeader( queryParameterKeyValuePair[0], queryParameterKeyValuePair[1])));
         }
 
         private void ParseRequestQueryParameters()
@@ -105,12 +103,11 @@ namespace SIS.HTTP.Request
             if (this.HasQueryStrng())
             {
                 this.Url.Split('?', '#')[1]
-                    .Split('?')
+                    .Split('&')
                     .Select(plainQueryParameter => plainQueryParameter.Split('='))
                     .ToList()
-                    .ForEach(queryParameterKeyValuePair => this.FormData.Add(queryParameterKeyValuePair[0], queryParameterKeyValuePair[1]));
+                    .ForEach(queryParameterKeyValuePair => this.QueryData.Add(queryParameterKeyValuePair[0], queryParameterKeyValuePair[1]));
             }
-
         }
         private void ParseRequestFormDataParameters(string requestBody)
         {
@@ -134,7 +131,7 @@ namespace SIS.HTTP.Request
             var splitRequestString = requestString.Split(new[] { GlobalConstants.HttpNewLine }, StringSplitOptions.None);
             var requestLineParams = splitRequestString[0].Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (!IsValidRequestLine(requestLineParams))
+            if (!this.IsValidRequestLine(requestLineParams))
             {
                 throw new BadRequestException();
             }

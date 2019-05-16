@@ -28,10 +28,7 @@ namespace SIS.HTTP.Response
         public HttpResponseStatusCode StatusCode { get; set; }
         public IHttpHeaderCollection Header { get; }
         public byte[] Content { get; set; }
-        public void AddHeader(HttpHeader header)
-        {
-            this.Header.AddHeader(header);
-        }
+        public void AddHeader(HttpHeader header) => this.Header.AddHeader(header);
 
         public byte[] GetBytes()
         {
@@ -50,7 +47,6 @@ namespace SIS.HTTP.Response
             }
 
             return httpResponseBytesWithBody;
-            throw new NotImplementedException();
         }
 
         public override string ToString()
@@ -65,7 +61,6 @@ namespace SIS.HTTP.Response
             return sb.ToString();
         }
 
-        public void AddHeaderr(HttpHeader header) => this.Header.AddHeader(header);
 
 
     }
