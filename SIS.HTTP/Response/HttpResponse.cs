@@ -19,7 +19,7 @@ namespace SIS.HTTP.Response
 
         public HttpResponse(HttpResponseStatusCode statusCode) : this()
         {
-            CoreValidator.ThrowIfFull(statusCode, nameof(statusCode));
+            CoreValidator.ThrowIfNull(statusCode, nameof(statusCode));
             this.StatusCode = statusCode;
         }
 

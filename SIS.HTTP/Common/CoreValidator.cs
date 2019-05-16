@@ -6,7 +6,7 @@ namespace SIS.HTTP.Common
 {
     public class CoreValidator
     {
-        public static void ThrowIfFull(object obj, string name)
+        public static void ThrowIfNull(object obj, string name)
         {
             if (obj == null)
             {

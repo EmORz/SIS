@@ -20,7 +20,7 @@ namespace SIS.WebServer
 
         public Server(int port, IServerRoutingTable serverRoutingTable)
         {
-            CoreValidator.ThrowIfFull(serverRoutingTable, nameof(serverRoutingTable));
+            CoreValidator.ThrowIfNull(serverRoutingTable, nameof(serverRoutingTable));
 
             this.port = port;
             this.serverRoutingTable = serverRoutingTable;

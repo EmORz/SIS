@@ -17,7 +17,7 @@ namespace SIS.HTTP.Headers
         }
         public void AddHeader(HttpHeader header)
         {
-            CoreValidator.ThrowIfFull(header, nameof(header));
+            CoreValidator.ThrowIfNull(header, nameof(header));
             this.headers.Add(header.Key, header);
         }
         public bool ContainsHeader(string key)
