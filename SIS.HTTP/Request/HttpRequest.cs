@@ -33,7 +33,6 @@ namespace SIS.HTTP.Request
 
         public HttpRequestMethod RequestMethod { get; private set; }
 
-        //todo: add method!!!
 
         private bool IsValidRequestLine(string[] requestLineParams)
         {

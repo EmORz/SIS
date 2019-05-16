@@ -9,7 +9,6 @@ namespace SIS.WebServer.Result
 {
     public class RedirectResult : HttpResponse
     {
-        //todo: implement
         public RedirectResult(string location)
             : base(HttpResponseStatusCode.SeeOther)
         {

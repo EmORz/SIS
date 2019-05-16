@@ -24,7 +24,6 @@ namespace SIS.HTTP.Response
         }
 
 
-        //todo implement
         public HttpResponseStatusCode StatusCode { get; set; }
         public IHttpHeaderCollection Header { get; }
         public byte[] Content { get; set; }
