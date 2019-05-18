@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.AssemblyInfo.cs
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.deps.json
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.runtimeconfig.json
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.runtimeconfig.dev.json
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.dll
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.pdb
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\SIS.HTTP.dll
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\SIS.HTTP.pdb
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csproj.CopyComplete
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.dll
+C:\Users\User\source\repos\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.pdb
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\SIS.WebServer.dll
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\SIS.WebServer.pdb
+C:\Users\User\source\repos\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Views\Home\Home.html
