@@ -710,11 +710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\SIS_V\\SIS.WebServer\\SIS.WebServer.csproj",
+      "projectUniqueName": "E:\\SIS_P01\\SIS\\SIS\\SIS_V\\SIS.WebServer\\SIS.WebServer.csproj",
       "projectName": "SIS.WebServer",
-      "projectPath": "C:\\Users\\User\\source\\repos\\SIS_V\\SIS.WebServer\\SIS.WebServer.csproj",
+      "projectPath": "E:\\SIS_P01\\SIS\\SIS\\SIS_V\\SIS.WebServer\\SIS.WebServer.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\SIS_V\\SIS.WebServer\\obj\\",
+      "outputPath": "E:\\SIS_P01\\SIS\\SIS\\SIS_V\\SIS.WebServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -733,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\SIS_V\\SIS.HTTP\\SIS.HTTP.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\SIS_V\\SIS.HTTP\\SIS.HTTP.csproj"
+            "E:\\SIS_P01\\SIS\\SIS\\SIS_V\\SIS.HTTP\\SIS.HTTP.csproj": {
+              "projectPath": "E:\\SIS_P01\\SIS\\SIS\\SIS_V\\SIS.HTTP\\SIS.HTTP.csproj"
             }
           }
         }

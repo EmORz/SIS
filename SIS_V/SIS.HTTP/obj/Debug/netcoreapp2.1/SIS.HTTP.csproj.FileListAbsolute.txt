@@ -7,3 +7,12 @@ C:\Users\User\source\repos\SIS_V\SIS.HTTP\bin\Debug\netcoreapp2.1\SIS.HTTP.dll
 C:\Users\User\source\repos\SIS_V\SIS.HTTP\bin\Debug\netcoreapp2.1\SIS.HTTP.pdb
 C:\Users\User\source\repos\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.dll
 C:\Users\User\source\repos\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\bin\Debug\netcoreapp2.1\SIS.HTTP.deps.json
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\bin\Debug\netcoreapp2.1\SIS.HTTP.dll
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\bin\Debug\netcoreapp2.1\SIS.HTTP.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.csprojAssemblyReference.cache
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.csproj.CoreCompileInputs.cache
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.AssemblyInfoInputs.cache
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.AssemblyInfo.cs
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.dll
+E:\SIS_P01\SIS\SIS\SIS_V\SIS.HTTP\obj\Debug\netcoreapp2.1\SIS.HTTP.pdb

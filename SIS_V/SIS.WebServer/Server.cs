@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 using SIS.HTTP.Common;
 using SIS.WebServer.Routing.Contracts;
 
@@ -27,11 +28,10 @@ namespace SIS.WebServer
 
             this.tcpListener = new TcpListener(IPAddress.Parse(LocalhostIpAddress), port);
         }
-        private void Listen(Socket client)
+        private async Task Listen(Socket client)
         {
             var connectionHandler = new ConnectionHandler(client, this.serverRoutingTable);
-            connectionHandler.ProcessRequest();
-
+            await connectionHandler.ProcessRequestAsync();
         }
         public void Run()
         {
@@ -44,9 +44,11 @@ namespace SIS.WebServer
             {
                 Console.WriteLine("Waiting for client...");
 
+
                 var client = this.tcpListener.AcceptSocket();
 
-                this.Listen(client);
+                Task.Run(() => this.Listen(client));
+              
             }
         }
     }
