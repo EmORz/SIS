@@ -1,0 +1,14 @@
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.deps.json
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csproj.CoreCompileInputs.cache
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.AssemblyInfoInputs.cache
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.AssemblyInfo.cs
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csprojAssemblyReference.cache
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.runtimeconfig.json
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.runtimeconfig.dev.json
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Models.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Models.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csproj.CopyComplete
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.pdb

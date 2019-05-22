@@ -1,0 +1,9 @@
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\bin\Debug\netcoreapp2.1\Demo.Models.deps.json
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\bin\Debug\netcoreapp2.1\Demo.Models.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\bin\Debug\netcoreapp2.1\Demo.Models.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.csprojAssemblyReference.cache
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.csproj.CoreCompileInputs.cache
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.AssemblyInfoInputs.cache
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.AssemblyInfo.cs
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.pdb
