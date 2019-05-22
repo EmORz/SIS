@@ -32,3 +32,10 @@ E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.AssemblyInfo.
 E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csproj.CopyComplete
 E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.dll
 E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Views\Home\Index.html
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Views\Users\Login.html
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Views\Users\Register.html
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.Data.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.Models.dll
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.Data.pdb
+E:\SIS_P01\SIS\SIS\SIS_V\Demo.App\bin\Debug\netcoreapp2.1\Demo.Models.pdb
