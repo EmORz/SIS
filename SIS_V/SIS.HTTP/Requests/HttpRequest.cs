@@ -7,6 +7,9 @@ using SIS.HTTP.Requests.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Demo.App.Sessions.Contracts;
+using SIS.HTTP.Cookies;
+using SIS.HTTP.Cookies.Contracts;
 
 namespace SIS.HTTP.Requests
 {
@@ -19,6 +22,7 @@ namespace SIS.HTTP.Requests
             this.FormData = new Dictionary<string, object>();
             this.QueryData = new Dictionary<string, object>();
             this.Headers = new HttpHeaderCollection();
+            this.Cookies = new HttpCookieCollection();
 
             this.ParseRequest(requestString);
         }
@@ -27,7 +31,9 @@ namespace SIS.HTTP.Requests
         public Dictionary<string, object> FormData { get; }
         public Dictionary<string, object> QueryData { get; }
         public IHttpHeaderCollection Headers { get; }
+        public IHttpCookieCollection Cookies { get; }
         public HttpRequestMethod RequestMethod { get; set; }
+        public IHttpSession Session { get; set; }
 
         private bool IsValidRequestLine(string[] requestLineParams)
         {
@@ -83,7 +89,7 @@ namespace SIS.HTTP.Requests
         private void ParseRequestHeaders(string[] plainHeaders)
         {
             plainHeaders
-              .Select(plainHeader => plainHeader.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries))
+              .Select(plainHeader => plainHeader.Split(new[] { ": " }, StringSplitOptions.RemoveEmptyEntries))
               .ToList()
               .ForEach(headerKeyValuePair => this.Headers.AddHeader(new HttpHeader(headerKeyValuePair[0], headerKeyValuePair[1])));
         }
@@ -111,6 +117,24 @@ namespace SIS.HTTP.Requests
             }
 
         }
+        private void ParseCookies()
+        {
+            if (this.Headers.ContainsHeader(HttpHeader.Cookie))
+            {
+                var value = this.Headers.GetHeader(HttpHeader.Cookie).Value;
+                var unparseCookies = value.Split("; ", StringSplitOptions.RemoveEmptyEntries);
+
+
+                foreach (var unparseCookie in unparseCookies)
+                {
+                    var cookieKeyValuePair = unparseCookie.Split("=", StringSplitOptions.RemoveEmptyEntries);
+                    //Todo may be split by new[] {'='}, 2
+                    HttpCookie httpCookie = new HttpCookie(cookieKeyValuePair[0], cookieKeyValuePair[1], false);
+                    this.Cookies.AddCookie(httpCookie);
+                }
+
+            }
+        }
         private void ParseRequestParameters(string requestBody)
         {
             this.ParseRequestQueryParameters();
@@ -132,12 +156,14 @@ namespace SIS.HTTP.Requests
 
             this.ParseRequestPath();
 
+            this.ParseCookies();
+
             this.ParseRequestHeaders(ParsePlainRequestHeaders(splitRequestString).ToArray());
 
             this.ParseRequestParameters(splitRequestString[splitRequestString.Length - 1]);
 
         }
 
-
+       
     }
 }

@@ -10,6 +10,9 @@ using System;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Demo.App.Sessions;
+using SIS.HTTP.Cookies;
+using SIS.WebServer.Sessions;
 
 namespace SIS.WebServer
 {
@@ -70,6 +73,35 @@ namespace SIS.WebServer
             var byteSegment = httpResponse.GetBytes();
             this.client.Send(byteSegment, SocketFlags.None);
         }
+
+        private string SetRequestSession(IHttpRequest httpRequest)
+        {
+            string sessionId = null;
+
+            if (httpRequest.Cookies.ContainsCookie(HttpSessionStorage.SessionCookieKey))
+            {
+                var cookies = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionCookieKey);
+                sessionId = cookies.Value;
+                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+            }
+            else
+            {
+                sessionId = Guid.NewGuid().ToString();
+            }
+            httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+
+            return httpRequest.Session.Id;
+        }
+
+        private void SetResponseSession(IHttpResponse httpResponse, string sessionId)
+        {
+            if (sessionId!=null)
+            {
+                httpResponse.Cookies.AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey, sessionId));
+            }
+        }
+
+
         public async Task ProcessRequestAsync()
         {
             IHttpResponse httpResponse = null;
@@ -79,7 +111,9 @@ namespace SIS.WebServer
                 if (httpRequest != null)
                 {
                     Console.WriteLine($"Processing: {httpRequest.RequestMethod} {httpRequest.Path}...");
+                    var sessionId = this.SetRequestSession(httpRequest);
                     httpResponse = this.HandleRequest(httpRequest);
+                    this.SetResponseSession(httpResponse, sessionId);
                 }
             }
             catch (BadRequestException e)

@@ -8,7 +8,12 @@ namespace Demo.App.Controller
 {
     public class HomeController : BaseController
     {
-        public IHttpResponse Home(IHttpRequest httpRequest)
+        public HomeController(IHttpRequest request)
+        {
+            this.httpRequest = request;
+
+        }
+        public IHttpResponse Index(IHttpRequest httpRequest)
         {
             return this.View();
         }
