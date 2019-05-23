@@ -12,10 +12,10 @@ namespace Demo.App
         public static void Main(string[] args)
         {
             //Todo => it doesnt work - must be refactoring
-            using (var context = new DemoDbContext())
-            {
-                context.Database.EnsureCreated();
-            }
+            //using (var context = new DemoDbContext())
+            //{
+            //    context.Database.EnsureCreated();
+            //}
 
             //
 
@@ -25,12 +25,14 @@ namespace Demo.App
             //    => new HtmlResult("<h1>Hello World!</h1>", HttpResponseStatusCode.Ok));
             //;
             //[GET] Mapping
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/", httpRequest => new HomeController(httpRequest).Index(httpRequest));
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/users/login", httpRequest => new UsersController().Login(httpRequest));
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/users/register", httpRequest => new UsersController().Register(httpRequest));
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/users/logout", httpRequest => new UsersController().Logout(httpRequest));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/", httpRequest => new HomeController().Home(httpRequest));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/login", httpRequest => new HomeController().Login(httpRequest));
+            //serverRoutingTable.Add(HttpRequestMethod.Get, "/", httpRequest => new HomeController(httpRequest).Index(httpRequest));
+            //serverRoutingTable.Add(HttpRequestMethod.Get, "/users/login", httpRequest => new UsersController().Login(httpRequest));
+            //serverRoutingTable.Add(HttpRequestMethod.Get, "/users/register", httpRequest => new UsersController().Register(httpRequest));
+            //serverRoutingTable.Add(HttpRequestMethod.Get, "/users/logout", httpRequest => new UsersController().Logout(httpRequest));
 
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/home", httpRequest => new HomeController(httpRequest).Home(httpRequest));
+            //serverRoutingTable.Add(HttpRequestMethod.Get, "/home", httpRequest => new HomeController(httpRequest).Home(httpRequest));
 
             //[Post] Mapping
             serverRoutingTable.Add(HttpRequestMethod.Post, "/users/login", httpRequest => new UsersController().LoginConfirm(httpRequest));

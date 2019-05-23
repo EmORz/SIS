@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using Demo.App.Sessions;
-using Demo.App.Sessions.Contracts;
+using SIS.HTTP.Sessions.Contracts;
 
 namespace SIS.WebServer.Sessions
 {

@@ -45,6 +45,7 @@ namespace SIS.HTTP.Cookies
         public override string ToString()
         {
             var sb = new StringBuilder();
+
             sb.Append($"{this.Key}={this.Value}; Expires={this.Expires:R}");
 
             if (this.HttpOnly)

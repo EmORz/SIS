@@ -1,6 +1,6 @@
-﻿using Demo.App.Sessions.Contracts;
-using SIS.HTTP.Common;
+﻿using SIS.HTTP.Common;
 using System.Collections.Generic;
+using SIS.HTTP.Sessions.Contracts;
 
 namespace Demo.App.Sessions
 {
@@ -26,11 +26,12 @@ namespace Demo.App.Sessions
             return this.sessionParameters.ContainsKey(parameterName);
         }
 
-        public void AddParamete(string parameterName, object parameter)
+        public void AddParameter(string parameterName, object parameter)
         {
             CoreValidator.ThrowIfNullOrEmpty(parameterName, nameof(parameterName));
             CoreValidator.ThrowIfNull(parameter, nameof(parameter));
-            this.sessionParameters.Add(parameterName, parameter);
+
+            this.sessionParameters[parameterName] = parameter;
         }
 
         public void ClearParameters()

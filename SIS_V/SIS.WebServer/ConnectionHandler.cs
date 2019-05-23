@@ -82,7 +82,6 @@ namespace SIS.WebServer
             {
                 var cookies = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionCookieKey);
                 sessionId = cookies.Value;
-                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
             }
             else
             {
@@ -97,7 +96,10 @@ namespace SIS.WebServer
         {
             if (sessionId!=null)
             {
-                httpResponse.Cookies.AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey, sessionId));
+                httpResponse
+                    .Cookies
+                    .AddCookie
+                        (new HttpCookie(HttpSessionStorage.SessionCookieKey, sessionId));
             }
         }
 

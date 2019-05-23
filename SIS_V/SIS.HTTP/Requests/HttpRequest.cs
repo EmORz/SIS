@@ -7,9 +7,9 @@ using SIS.HTTP.Requests.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Demo.App.Sessions.Contracts;
 using SIS.HTTP.Cookies;
 using SIS.HTTP.Cookies.Contracts;
+using SIS.HTTP.Sessions.Contracts;
 
 namespace SIS.HTTP.Requests
 {
@@ -21,6 +21,7 @@ namespace SIS.HTTP.Requests
 
             this.FormData = new Dictionary<string, object>();
             this.QueryData = new Dictionary<string, object>();
+
             this.Headers = new HttpHeaderCollection();
             this.Cookies = new HttpCookieCollection();
 
@@ -122,17 +123,15 @@ namespace SIS.HTTP.Requests
             if (this.Headers.ContainsHeader(HttpHeader.Cookie))
             {
                 var value = this.Headers.GetHeader(HttpHeader.Cookie).Value;
-                var unparseCookies = value.Split("; ", StringSplitOptions.RemoveEmptyEntries);
+                var unparseCookies = value.Split(new []{ "; "}, StringSplitOptions.RemoveEmptyEntries);
 
 
                 foreach (var unparseCookie in unparseCookies)
                 {
-                    var cookieKeyValuePair = unparseCookie.Split("=", StringSplitOptions.RemoveEmptyEntries);
-                    //Todo may be split by new[] {'='}, 2
+                    var cookieKeyValuePair = unparseCookie.Split(new char[]{'='}, 2);
                     HttpCookie httpCookie = new HttpCookie(cookieKeyValuePair[0], cookieKeyValuePair[1], false);
                     this.Cookies.AddCookie(httpCookie);
                 }
-
             }
         }
         private void ParseRequestParameters(string requestBody)

@@ -12,6 +12,8 @@ namespace Demo.App.Controller
 {
     public abstract class BaseController
     {
+        protected IHttpRequest httpRequest { get; set; }
+
         public IHttpResponse View([CallerMemberName]string view = null)
         {
             var controllerName = this.GetType().Name.Replace("Controller", String.Empty);
@@ -27,7 +29,7 @@ namespace Demo.App.Controller
             return result;
         }
 
-        protected bool IsLogged()
+        protected bool IsLoggedIn()
         {
             return httpRequest.Session.ContainsParameter("username");
         }
@@ -35,19 +37,28 @@ namespace Demo.App.Controller
         {
             return new RedirectResult(url);
         }
-        protected IHttpRequest httpRequest { get; set; }
 
         protected Dictionary<string, object> ViewData = new Dictionary<string, object>();
 
         private string ParseTemplate(string viewContent)
         {
-            foreach (var param in this.ViewData)
-            {
-                viewContent = viewContent.Replace($"{param.Key}", param.Value.ToString());
-            }
+            //if (this.IsLoggedIn())
+            //{
+                viewContent.Replace("@Model.HelloMessage", $"HelLLlo {this.httpRequest.Session.GetParameter("username")}!");
+
+            
+            //else
+            //{
+            //    viewContent.Replace("@Model.HelloMessage", "Hello U World from SIS.WebServer! E.");
+
+            //}
+            //foreach (var param in this.ViewData)
+            //{
+            //    viewContent = viewContent.Replace($"{param.Key}", param.Value.ToString());
+            //}
             return viewContent;
         }
 
-        
+
     }
 }

@@ -25,7 +25,7 @@ namespace Demo.App.Controller
                 {
                     return this.Redirect("/login");
                 }
-                httpRequest.Session.AddParamete("username", userFromDb.Username);
+                httpRequest.Session.AddParameter("username", userFromDb.Username);
                 return this.Redirect("/home");
 
 
@@ -62,7 +62,7 @@ namespace Demo.App.Controller
 
         public IHttpResponse Logout(IHttpRequest httpRequest)
         {
-            if (this.IsLogged())
+            if (this.IsLoggedIn())
             {
                 httpRequest.Session.ClearParameters();
                 return this.Redirect("/");

@@ -10,9 +10,8 @@ namespace Demo.App.Controller
 {
     public class HomeController : BaseController
     {
-        public HomeController(IHttpRequest request)
+        public HomeController()
         {
-            this.httpRequest = request;
 
         }
         public IHttpResponse Index(IHttpRequest httpRequest)
@@ -27,14 +26,22 @@ namespace Demo.App.Controller
             return newrResponse;
         }
 
+        public IHttpResponse Login(IHttpRequest httpRequest)
+        {
+            httpRequest.Session.AddParameter("username", "Pesho");
+            return this.Redirect("/");
+
+        }
+
         public IHttpResponse Home(IHttpRequest httpRequest)
         {
-            if (!this.IsLogged())
-            {
-                return this.Redirect($"/login");
-            }
+            this.httpRequest = httpRequest;
+            //if (!this.IsLoggedIn())
+            //{
+            //    return this.Redirect($"/login");
+            //}
 
-            this.ViewData["Username"] = this.httpRequest.Session.GetParameter("username");
+            //this.ViewData["Username"] = this.httpRequest.Session.GetParameter("username");
             return this.View();
 
 
